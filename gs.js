@@ -32,6 +32,9 @@ function notifyOnSubmission() {
     `;
     GmailApp.sendEmail(memberAssigned.email, `New Support Ticket From ${responseObject.name}`, emailBody);
     Logger.log("Sent to " + memberAssigned.email);
+    var admin_email = "";
+    GmailApp.sendEmail(admin_email, `New Support Ticket From ${responseObject.name}`, emailBody);
+    Logger.log("Sent to Admin");
   }
   
   // This function determines who the task will be assigned to
